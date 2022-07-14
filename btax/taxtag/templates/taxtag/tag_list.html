@@ -1,0 +1,35 @@
+{% extends "base.html" %} {% block content %}
+
+<h2><i class="bi bi-tags"></i> Tags</h2>
+
+<div class="row">
+    <div class="col-md-auto">
+  <table class="table table-sm table-light table-responsive">
+    <thead class="thead-inverse">
+      <tr>
+        <th>Tag</th>
+        <th>Level</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for a in object_list %}
+      <tr>
+        <p>
+          <td>
+
+            <a class="btn btn-primary btn-sm w-100 py-0" style="text-align:left" href={% url 'tagsearch' a.tag  %}> {{ a.tag}}</a>
+
+
+          </td>
+
+          <td>{{ a.level }}</td>
+        </p>
+      </tr>
+
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+</div>
+
+{% endblock %}
